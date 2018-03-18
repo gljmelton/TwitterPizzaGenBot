@@ -4,7 +4,7 @@ class beverage(object):
     name = ""
     probability = 100
 
-    def __init__(name, prob):
+    def __init__(self, name, prob):
         self.name = name
         self.probability = prob
 
@@ -12,7 +12,7 @@ class bevSize(object):
     name = ""
     probability = 100
 
-    def __init__(name, prob):
+    def __init__(self, name, prob):
         self.name = ""
         self.probability = 100
 

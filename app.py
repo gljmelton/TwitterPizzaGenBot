@@ -15,15 +15,13 @@ api = tweepy.API(auth)
 for i in range(4):
     top1 = random.choice(toppings.top)
     top2 = random.choice(toppings.top)
-
-    print(("A " + top1 + " and " + top2 + " pizza with a 2 liter of " + (random.choice(beverages.bev))))
+    bev = random.choice(beverages.bev)
+    print(("A " + top1.name + " and " + top2.name + " pizza with a 2 liter of " + bev.name))
     time.sleep(1)
 
 def GenerateAPizza():
 #figure out how many toppings
 #determine crust
-
+#how many of these pizzas to order
 
     return "This is the pizza"
-
-def

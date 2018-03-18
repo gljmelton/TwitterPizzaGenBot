@@ -3,7 +3,7 @@ class topping(object):
     name = ""
     probability = 100
 
-    def __init__(name, prob):
+    def __init__(self, name, prob):
         self.name = name
         self.probability = prob
 
