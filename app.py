@@ -1,22 +1,49 @@
 #main app
 
-import tweepy, time, toppings, beverages, random
+#2x Large Thin-crust Pepperoni and Lasagna Pizza
+#1x Sixer of Pepsi
+#
 
-auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
+import tweepy, time, toppings, beverages, crust, pizza, random, sys, local_settings
+
+
+
+auth = tweepy.OAuthHandler(local_settings.CONSUMER_KEY, local_settings.CONSUMER_SECRET)
+auth.set_access_token(local_settings.ACCESS_TOKEN, local_settings.ACCESS_SECRET)
 
 api = tweepy.API(auth)
 
-for i in range(4):
-    top1 = random.choice(toppings.top)
-    top2 = random.choice(toppings.top)
-    bev = random.choice(beverages.bev)
-    print(("A " + top1.name + " and " + top2.name + " pizza with a 2 liter of " + bev.name))
-    time.sleep(1)
+#for each pizza ordered, determine the amount of that pizza to order
+def DetermineOrderQuantity():
+    return random.randint(1,99)
 
-def GenerateAPizza():
-#figure out how many toppings
-#determine crust
-#how many of these pizzas to order
+#how many different pizzas to order
+def DeterminePizzaAmount():
+    return random.randint(1,4)
 
-    return "This is the pizza"
+def BuildAPizza():
+    pizzAmount = DeterminePizzaAmount()
+    pickedToppings = []
+    for i in range(0, pizzAmount):
+        pickedToppings.append(toppings.GetValidTopping(pickedToppings))
+
+    pizzaOrder = pizza.Pizza(random.choice(crust.sizes), pickedToppings, DetermineOrderQuantity(), random.choice(crust.crusts))
+    return pizzaOrder
+
+
+finalPizza = BuildAPizza()
+
+#A large thin crust pineapple & ham pizza
+finalOrder = "A " + finalPizza.size + " " + finalPizza.crust + " pizza topped with "
+
+for x in range(0, len(finalPizza.toppings)):
+    finalOrder += finalPizza.toppings[x] + " "
+    if x < (len(finalPizza.toppings)-1):
+        finalOrder += "& "
+
+print(finalOrder)
+raw_input('Press Enter to exit')
+
+    #determine beverage
+
+    #concatenate into tweet

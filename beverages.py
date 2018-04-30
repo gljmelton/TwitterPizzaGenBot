@@ -16,27 +16,28 @@ class bevSize(object):
         self.name = ""
         self.probability = 100
 
-bev = [beverage("pepsi", 50),
-        beverage("coke", 50),
-        beverage("water", 50),
-        beverage("milk", 50),
-        beverage("piss", 50),
-        beverage("bug juice", 50),
-        beverage("gatorade", 50),
-        beverage("wine", 50),
-        beverage("beer", 50)]
+bev = ["pepsi",
+       "coke",
+       "water",
+       "milk",
+       "piss",
+       "bug juice",
+       "gatorade",
+       "wine",
+       "beer"
+        ]
 
-sizes = [bevSize("can", 50),
-         bevSize("sixer", 50),
-         bevSize("gallon", 50),
-         bevSize("pint", 50),
-         bevSize("keg", 50),
-         bevSize("bottle", 50),
-         bevSize("two-liter", 50),
-         bevSize("carton", 50),
-         bevSize("box", 50),
-         bevSize("big bag", 50),
-         bevSize("small bag", 50),
-         bevSize("ziploc bag", 50),
-         bevSize("condom", 50),
-         bevSize("bowl", 50)]
+sizes = ["can",
+         "sixer",
+         "gallon",
+         "pint",
+         "keg",
+         "bottle",
+         "two-liter",
+         "carton",
+         "box",
+         "big bag",
+         "small bag",
+         "ziploc bag",
+         "condom",
+         "bowl"]
